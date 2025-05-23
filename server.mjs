@@ -1,6 +1,6 @@
 import Express from "express";
 import cors from "cors";
-import usuarioRoutes from "./routes/usuarioRoutes.js";
+import usuarioRoutes from "./routes/usuarioRoutes.mjs";
 
 export default class Server {
 
@@ -12,7 +12,7 @@ export default class Server {
         this.middlewares();
         //this.route();
         this.Server.listen(port, () => {
-            console.log('Server listen on port ${port}');
+            console.log(`Server listen on port ${port}`);
         })
     }
 
