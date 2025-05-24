@@ -6,8 +6,8 @@ export default class UsuariosController {
         const usuario = new Usuarios();
         return usuario.all();
     }
-    adicionar(nome, idade, administrador, email) {
-        const usuario = new Usuarios(nome, idade, administrador, email);
+    adicionar(nome, idade, administrador, email, senha) {
+        const usuario = new Usuarios(nome, idade, administrador, email, senha);
         usuario.add();
     }
 }

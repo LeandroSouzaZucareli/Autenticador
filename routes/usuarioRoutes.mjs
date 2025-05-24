@@ -15,9 +15,10 @@ router.get('/api/adicionar', (req, res) => {
     const idade = req.query.idade;
     const administrador = req.query.administrador;
     const email = req.query.email;
+    const senha = req.query.senha;
 
     const usuarios = new UsuariosController();
-    usuarios.adicionar(nome, idade, administrador, email);
+    usuarios.adicionar(nome, idade, administrador, email, senha);
     res.send(`usuario ${nome} adicionado com sucesso!`);
 })
 export default router;

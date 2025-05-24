@@ -5,11 +5,12 @@ const client = new MongoClient(url);
 
 export default class Usuarios {
 
-    constructor(nome, idade, administrador, email){
+    constructor(nome, idade, administrador, email, senha){
         this.nome = nome;
         this.idade = idade;
         this.administrador = administrador;
         this.email = email;
+        this.senha = senha;
     }
 
     async add() {
@@ -18,7 +19,7 @@ export default class Usuarios {
             await client.connect();
             const db = client.db('db3B');
             const collection = db.collection('users');
-            const insertResult = await collection.insertOne({ nome: this.nome, idade: this.idade, admim: this.administrador, email: this.email});
+            const insertResult = await collection.insertOne({ nome: this.nome, idade: this.idade, admim: this.administrador, email: this.email, senha: this.senha});
             return insertResult;
         } catch (error) {
             return `Erro durante a requisição do banco : ${error}`;
